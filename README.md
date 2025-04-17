@@ -23,5 +23,5 @@ Check out the https://drive.google.com/file/d/1BmoTe-Nn_AlTwIIGu-XZyFp_ZGob6y9O/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/CareerGuide-SmartCareerAdvisor.git
-   cd CareerGuide-SmartCareerAdvisor
+   git clone https://github.com/Lalpramodh/SmartCareerAdvisor
+   cd SmartCareerAdvisor
