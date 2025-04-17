@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #FAF9F6;
+  color: #2c3e50;
+  overflow-x: hidden;
+}
+
+/* Container Styling */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Blurry Image Section (Only Background Slightly Blurred) */
+.image-section {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background: url('/static/images/about_bg.png') no-repeat center center/cover;
+  border-radius: 15px;
+}
+
+.image-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);  /* Slight blur on image */
+  border-radius: 15px;
+}
+
+/* Overlay Text (NO BLUR on Text Now) */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  z-index: 2; /* Ensures text is above the blurred background */
+}
+
+.overlay-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.overlay-text:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Two Div Sections (Key Features & How It Works) */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.half {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.half h2 {
+  color: #304c64;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.half ul {
+  padding-left: 20px;
+}
+
+.half li {
+  list-style: none;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.half li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #0d1c2f;
+  font-weight: bold;
+}
+
+.half:hover {
+  transform: scale(1.05);
+}
+
+/* Team Section */
+.team-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 2rem;
+  color: #1b314f;
+}
+
+.team-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.team-section li {
+  background: #eef3f7;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 8px;
+  width: 60%;
+  font-weight: 500;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.team-section li:hover {
+  background: #dce0e3;
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact-section a {
+  display: inline-block;
+  color: white;
+  background: #304c64;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-section a:hover {
+  background: #1b314f;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-section {
+    flex-direction: column;
+  }
+
+  .half {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .team-section li {
+    width: 80%;
+  }
+}

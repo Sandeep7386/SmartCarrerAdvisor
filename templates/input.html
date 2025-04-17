@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/input.css') }}">
+    <script src="{{ url_for('static', filename='js/validation.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Your Details</h2>
+        <form action="{{ url_for('predict') }}" method="post" class="form-grid">
+            <div class="form-group">
+                <label>Academic percentage in Operating Systems:</label>
+                <input type="number" step="0.01" name="Academic percentage in Operating Systems" placeholder="Eg: 85.5" required>
+            </div>
+            <div class="form-group">
+                <label>Percentage in Algorithms:</label>
+                <input type="number" step="0.01" name="Percentage in Algorithms" placeholder="Eg: 90.0" required>
+            </div>
+            <div class="form-group">
+                <label>Percentage in Programming Concepts:</label>
+                <input type="number" step="0.01" name="Percentage in Programming Concepts" placeholder="Eg: 88.3" required>
+            </div>
+            <div class="form-group">
+                <label>Percentage in Software Engineering:</label>
+                <input type="number" step="0.01" name="Percentage in Software Engineering" placeholder="Eg: 92.1" required>
+            </div>
+            <div class="form-group">
+                <label>Percentage in Computer Networks:</label>
+                <input type="number" step="0.01" name="Percentage in Computer Networks" placeholder="Eg: 89.5" required>
+            </div>
+            <div class="form-group">
+                <label>Percentage in Electronics Subjects:</label>
+                <input type="number" step="0.01" name="Percentage in Electronics Subjects" placeholder="Eg: 87.2" required>
+            </div>
+            <div class="form-group">
+                <label>Percentage in Computer Architecture:</label>
+                <input type="number" step="0.01" name="Percentage in Computer Architecture" placeholder="Eg: 85.0" required>
+            </div>
+            <div class="form-group">
+                <label>Percentage in Mathematics:</label>
+                <input type="number" step="0.01" name="Percentage in Mathematics" placeholder="Eg: 91.3" required>
+            </div>
+            <div class="form-group">
+                <label>Percentage in Communication skills:</label>
+                <input type="number" step="0.01" name="Percentage in Communication skills" placeholder="Eg: 80.5" required>
+            </div>
+            <div class="form-group">
+                <label>Hours working per day:</label>
+                <input type="number" step="0.1" name="Hours working per day" placeholder="Eg: 6.5" required>
+            </div>
+            <div class="form-group">
+                <label>Logical quotient rating:</label>
+                <input type="number" step="0.01" name="Logical quotient rating" placeholder="Eg: 7.8" required>
+            </div>
+            <div class="form-group">
+                <label>Hackathons:</label>
+                <input type="number" name="Hackathons" placeholder="Eg: 2" required>
+            </div>
+            <div class="form-group">
+                <label>Coding skills rating:</label>
+                <input type="number" step="0.01" name="Coding skills rating" placeholder="Eg: 8.9" required>
+            </div>
+            <div class="form-group">
+                <label>Public speaking points:</label>
+                <input type="number" step="0.01" name="Public speaking points" placeholder="Eg: 7.2" required>
+            </div>
+            <div class="form-group">
+                <label>Can work long time before system? (1 = Yes, 0 = No):</label>
+                <input type="number" min="0" max="1" name="Can work long time before system?" placeholder="Eg: 1" required>
+            </div>
+            <div class="form-group">
+                <label>Self-learning capability? (1 = Yes, 0 = No):</label>
+                <input type="number" min="0" max="1" name="Self-learning capability?" placeholder="Eg: 1" required>
+            </div>
+            <div class="form-group">
+                <label>Extra-courses did:</label>
+                <input type="number" name="Extra-courses did" placeholder="Eg: 0-MERN Stack ,1-ML,3-Cloud Computing,4-Data Analytics,5-Cyber Security " required>
+            </div>
+            <div class="form-group">
+                <label>No of Certifications:</label>
+                <input type="number" name="Certifications" placeholder="Eg: 3" required>
+            </div>
+            <div class="form-group">
+                <label>Workshops:</label>
+                <input type="number" name="Workshops" placeholder="Eg:0-AI,1-Data Science,3-Cyber Security,4-Block Chain" required>
+            </div>
+            <div class="form-group">
+                <label>Interested subjects:</label>
+                <input type="text" name="Interested subjects" placeholder="Eg:0-Machine Learning,1-Cyber Security,2-Cloud Computing,3-Data Analytics" required>
+            </div>
+            <div class="form-group">
+                <label>Interested career area:</label>
+                <input type="text" name="Interested career area" placeholder="Eg:0-Data Science,1-ML,3-Cyber Srcurity" required>
+            </div>
+            <div class="form-group">
+                <label>Job/Higher Studies? (1 = Job, 0 = Higher Studies):</label>
+                <input type="number" min="0" max="1" name="Job/Higher Studies?" placeholder="Eg: 1" required>
+            </div>
+            <div class="form-group">
+                <label>Type of company want to settle in:</label>
+                <input type="text" name="Type of company want to settle in?" placeholder="Eg:0-MNC,1-Research Based" required>
+            </div>
+            <div class="form-group">
+                <label>Management or Technical? (1 = Management, 0 = Technical):</label>
+                <input type="number" min="0" max="1" name="Management or Technical" placeholder="Eg: 0" required>
+            </div>
+            <div class="form-group">
+                <label>Worked in teams ever? (1 = Yes, 0 = No):</label>
+                <input type="number" min="0" max="1" name="Worked in teams ever?" placeholder="Eg: 1" required>
+            </div>
+            <button type="submit" class="submit-btn">Predict Career</button>
+        </form>
+    </div>
+</body>
+</html>

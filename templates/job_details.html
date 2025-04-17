@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/job_details.css') }}">
+    <title>Job Details</title>
+</head>
+<body>
+    <main class="container">
+        <h2 id="main-heading">Select a job from the left to see details.</h2>
+        
+        <div class="job-container" >
+            <!-- Job Details Section -->
+            <div id="database-developer" class="job-card">
+                <h2 class="text-lg font-semibold">Database Developer</h2>
+                <img src="{{ url_for('static', filename='images/database_developer.jpg') }}" alt="Database Developer"> 
+                <p><strong>About the Job:</strong> Designs and manages databases.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Develop and optimize database structures.</li>
+                    <li>Ensure data integrity and security.</li>
+                    <li>Manage database backups and recovery.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> SQL, NoSQL, Data Modeling.</p>
+            </div>
+            
+            <div id="portal-administrator" class="job-card">
+                <h2>Portal Administrator</h2>
+                <img src="{{ url_for('static', filename='images/portal_administrator.jpg') }}" alt="Portal Administrator"> 
+                <p><strong>About the Job:</strong> Manages enterprise web portals.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Monitor and update portal content.</li>
+                    <li>Manage user permissions and security.</li>
+                    <li>Optimize portal performance.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Web Development, Content Management.</p>
+            </div>
+            
+            <div id="systems-security-admin" class="job-card">
+                <h2>Systems Security Administrator</h2>
+                <img src="{{ url_for('static', filename='images/systems_security_admin.jpg') }}" alt="Systems Security Administrator"> 
+                <p><strong>About the Job:</strong> Ensures the security of IT systems.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Conduct security audits and assessments.</li>
+                    <li>Implement firewalls and encryption.</li>
+                    <li>Monitor networks for threats.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Cybersecurity, Network Security.</p>
+            </div>
+            
+            <div id="business-intelligence-analyst" class="bg-white p-6 rounded-lg shadow-md job-card">
+                <h2 >Business Intelligence Analyst</h2>
+                <img src="{{ url_for('static', filename='images/business_intelligence_analyst.jpg') }}" alt="Business Intelligence Analyst"> 
+                <p><strong>About the Job:</strong> Analyzes business data for insights.</p>
+                <p><strong>Key Responsibilities:</strong>">
+                    <li>Design and develop BI reports.</li>
+                    <li>Extract and analyze data trends.</li>
+                    <li>Provide strategic recommendations.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> SQL, Data Analytics, Reporting Tools.</p>
+            </div>
+            
+            <div id="software-engineer" class="job-card">
+                <h2>Software Engineer</h2>
+                <img src="{{ url_for('static', filename='images/software_engineer.jpg') }}" alt="Software Engineer"> 
+                <p><strong>About the Job:</strong> Develops software applications.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Write and test software code.</li>
+                    <li>Debug and improve applications.</li>
+                    <li>Collaborate with development teams.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Programming, Problem-Solving.</p>
+            </div>
+            
+            <div id="network-engineer" class="job-card">
+                <h2 class="text-lg font-semibold">Network Engineer</h2>
+                <img src="{{ url_for('static', filename='images/network_engineer.jpg') }}" alt="Network Engineer"> 
+                <p><strong>About the Job:</strong> Maintains IT networks.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Configure and troubleshoot network systems.</li>
+                    <li>Implement network security measures.</li>
+                    <li>Ensure network availability.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Networking, Security.</p>
+            </div>
+            
+            <div id="web-developer" class="job-card">
+                <h2>Web Developer</h2>
+                <img src="{{ url_for('static', filename='images/web_developer.jpg') }}" alt="Web Developer"> 
+                <p><strong>About the Job:</strong> Develops websites and applications.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Write HTML, CSS, and JavaScript code.</li>
+                    <li>Optimize website performance.</li>
+                    <li>Implement UI/UX features.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Frontend & Backend Development.</p>
+            </div>
+            
+            <div id="data-architect" class="job-card">
+                <h2>Data Architect</h2>
+                <img src="{{ url_for('static', filename='images/data_architect.jpg') }}" alt="Data Architect">
+                <p><strong>About the Job:</strong> Designs and manages data structures.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Develop data models and architectures.</li>
+                    <li>Ensure data security and compliance.</li>
+                    <li>Optimize database performance.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Data Modeling, SQL, Cloud Databases.</p>
+            </div>
+            
+            <div id="software-quality-assurance" class="job-card">
+                <h2>Software Quality Assurance (QA) / Testing</h2>
+                <img src="{{ url_for('static', filename='images/qa_testing.jpg') }}" alt="QA / Testing"> 
+                <p><strong>About the Job:</strong> Ensures software quality.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Develop test cases and scripts.</li>
+                    <li>Identify and report bugs.</li>
+                    <li>Ensure software meets quality standards.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Manual & Automation Testing.</p>
+            </div>
+            
+            <div id="business-systems-analyst" class="job-card">
+                <h2>Business Systems Analyst</h2>
+                <img src="{{ url_for('static', filename='images/business_systems_analyst.jpg') }}" alt="Business Systems Analyst"> 
+                <p><strong>About the Job:</strong> Analyzes business and IT requirements.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Evaluate business processes and IT solutions.</li>
+                    <li>Develop system documentation and workflows.</li>
+                    <li>Facilitate communication between business and tech teams.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Business Analysis, Requirements Gathering, SQL.</p>
+            </div>
+
+            <div id="software-systems-engineer" class="job-card">
+                <h2>Software Systems Engineer</h2>
+                <img src="{{ url_for('static', filename='images/software_systems_engineer.jpg') }}" alt="Software Systems Engineer"> 
+                <p><strong>About the Job:</strong> Designs and integrates software systems.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Develop and implement system architectures.</li>
+                    <li>Ensure system compatibility and integration.</li>
+                    <li>Optimize system performance.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Systems Engineering, Software Development.</p>
+            </div>
+
+            <div id="crm-technical-developer" class="job-card">
+                <h2>CRM Technical Developer</h2>
+                <img src="{{ url_for('static', filename='images/crm_technical_developer.jpg') }}" alt="CRM Technical Developer"> 
+                <p><strong>About the Job:</strong> Develops and customizes CRM systems.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Implement CRM solutions.</li>
+                    <li>Customize workflows and automation.</li>
+                    <li>Ensure CRM system security.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> CRM Development, APIs, SQL.</p>
+            </div>
+
+            <div id="mobile-applications-developer" class="job-card">
+                <h2>Mobile Applications Developer</h2>
+                <img src="{{ url_for('static', filename='images/mobile_applications_developer.jpg') }}" alt="Mobile Applications Developer"> 
+                <p><strong>About the Job:</strong> Develops mobile applications for Android and iOS.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Design and develop mobile apps.</li>
+                    <li>Optimize performance for mobile devices.</li>
+                    <li>Ensure compatibility across platforms.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Android, iOS, Flutter, React Native.</p>
+            </div>
+
+            <div id="ux-designer" class="job-card">
+                <h2>UX Designer</h2>
+                <img src="{{ url_for('static', filename='images/ux_designer.jpg') }}" alt="UX Designer"> 
+                <p><strong>About the Job:</strong> Designs user-friendly interfaces.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Conduct user research.</li>
+                    <li>Create wireframes and prototypes.</li>
+                    <li>Collaborate with developers for UI implementation.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> UI/UX Design, Prototyping, Wireframing.</p>
+            </div>
+
+            <div id="quality-assurance-associate" class="job-card">
+                <h2>Quality Assurance Associate</h2>
+                <img src="{{ url_for('static', filename='images/quality_assurance_associate.jpg') }}" alt="Quality Assurance Associate"> 
+                <p><strong>About the Job:</strong> Ensures the quality of products through testing.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Develop and execute test plans.</li>
+                    <li>Identify and document defects.</li>
+                    <li>Collaborate with development teams to improve processes.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Manual Testing, Attention to Detail.</p>
+            </div>
+            
+            <div id="information-security-analyst" class="job-card">
+                <h2>Information Security Analyst</h2>
+               <img src="{{ url_for('static', filename='images/information_security_analyst.jpg') }}" alt="Information Security Analyst">
+                <p><strong>About the Job:</strong> Protects an organization’s computer systems and networks.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Monitor security systems for threats.</li>
+                    <li>Conduct risk assessments and audits.</li>
+                    <li>Implement security measures and protocols.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Cybersecurity, Risk Management.</p>
+            </div>
+            
+            <div id="crm-business-analyst" class="job-card">
+                <h2>CRM Business Analyst</h2>
+                 <img src="{{ url_for('static', filename='images/crm_business_analyst.jpg') }}" alt="CRM Business Analyst"> 
+                <p><strong>About the Job:</strong> Analyzes and improves CRM systems.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Gather and document business requirements.</li>
+                    <li>Analyze CRM data for insights.</li>
+                    <li>Collaborate with stakeholders to enhance CRM functionality.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Business Analysis, CRM Tools.</p>
+            </div>
+            
+            <div id="technical-support" class="job-card">
+                <h2>Technical Support</h2>
+                <img src="{{ url_for('static', filename='images/technical_support.jpg') }}" alt="Technical Support"> 
+                <p><strong>About the Job:</strong> Provides assistance to users experiencing technical issues.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Diagnose and resolve technical problems.</li>
+                    <li>Provide support via phone, email, or chat.</li>
+                    <li>Document issues and solutions for future reference.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Problem-Solving, Communication.</p>
+            </div>
+            
+            <div id="project-manager" class="job-card">
+                <h2>Project Manager</h2>
+                <img src="{{ url_for('static', filename='images/project_manager.jpg') }}" alt="Project Manager"> 
+                <p><strong>About the Job:</strong> Oversees projects from initiation to completion.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Define project scope and objectives.</li>
+                    <li>Manage project timelines and budgets.</li>
+                    <li>Coordinate with team members and stakeholders.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Project Management, Leadership.</p>
+            </div>
+            
+            <div id="information-technology-manager" class="job-card">
+                <h2>Information Technology Manager</h2>
+                <img src="{{ url_for('static', filename='images/information_technology_manager.jpg') }}" alt="Information Technology Manager"> 
+                <p><strong>About the Job:</strong> Manages IT operations and teams.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Oversee IT projects and initiatives.</li>
+                    <li>Manage IT budgets and resources.</li>
+                    <li>Ensure IT systems are secure and efficient.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> IT Management, Strategic Planning.</p>
+            </div>
+            
+            <div id="programmer-analyst" class="job-card">
+                <h2>Programmer Analyst</h2>
+                <img src="{{ url_for('static', filename='images/programmer_analyst.jpg') }}" alt="Programmer Analyst"> 
+                <p><strong>About the Job:</strong> Analyzes and develops software applications.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Write and maintain code for applications.</li>
+                    <li>Analyze user requirements and develop solutions.</li>
+                    <li>Test and debug applications.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Programming, Analytical Skills.</p>
+            </div>
+            
+            <div id="design-ux" class="job-card">
+                <h2>Design & UX</h2>
+                <img src="{{ url_for('static', filename='images/ux_designer.jpg') }}" alt="Design & UX"> 
+                <p><strong>About the Job:</strong> Focuses on user experience and interface design.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Conduct user research and usability testing.</li>
+                    <li>Create design prototypes and wireframes.</li>
+                    <li>Collaborate with developers to implement designs.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> UI/UX Design, Prototyping.</p>
+            </div>
+            
+            <div id="solutions-architect" class="job-card">
+                <h2>Solutions Architect</h2>
+                <img src="{{ url_for('static', filename='images/solutions_architect.jpg') }}" alt="Solutions Architect"> 
+                <p><strong>About the Job:</strong> Designs and implements technical solutions.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Analyze business requirements and design solutions.</li>
+                    <li>Collaborate with development teams on implementation.</li>
+                    <li>Ensure solutions are scalable and secure.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Architecture Design, Technical Skills.</p>
+            </div>
+            
+            <div id="systems-analyst" class="job-card">
+                <h2>Systems Analyst</h2>
+                <img src="{{ url_for('static', filename='images/systems_analyst.jpg') }}" alt="Systems Analyst"> 
+                <p><strong>About the Job:</strong> Analyzes and improves IT systems.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Evaluate system performance and functionality.</li>
+                    <li>Gather and document user requirements.</li>
+                    <li>Collaborate with IT teams to implement solutions.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Systems Analysis, Problem-Solving.</p>
+            </div>
+            
+            <div id="network-security-administrator" class="job-card">
+                <h2>Network Security Administrator</h2>
+                <img src="{{ url_for('static', filename='images/network_security_administrator.jpg') }}" alt="Network Security Administrator"> 
+                <p><strong>About the Job:</strong> Protects network systems from security threats.</p>
+                <p><strong>Key Responsibilities:</strong></p>
+                <ul class="agenda">
+                    <li>Analyze business requirements and design solutions.</li>
+                    <li>Collaborate with development teams on implementation.</li>
+                    <li>Ensure solutions are scalable and secure.</li>
+                </ul>
+                <p><strong>Skills Required:</strong> Architecture Design, Technical Skills.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>    

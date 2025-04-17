@@ -1,0 +1,159 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#main-heading {
+    text-align: center;
+    color:rgb(32, 32, 184)
+}
+
+body {
+    background: #f9f9f9;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Right Panel (Job Details Section) */
+.right-panel {
+    width: 100%;
+    height: 100vh;
+    background: #f9f9f9;
+    padding: 20px;
+    overflow-y: auto;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Job Cards Grid */
+.job-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Job Card Styling */
+.job-card {
+    background: white;
+    padding: 20px;
+    /* border-radius: 8px; */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out, bounceIn 0.6s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Job Card Hover Effect */
+.job-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Glow Effect */
+.job-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 122, 123, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.job-card:hover::before {
+    opacity: 1;
+}
+
+/* Job Card Image */
+.job-card img {
+    width: 250px;
+    height: 200px;
+    /* border-radius: 8px; */
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.job-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Job Card Title */
+.job-card h2 {
+    font-size: 1.3rem;
+    color: rgb(25, 25, 196);
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.job-card:hover h2 {
+    color: rgb(11, 11, 132);
+}
+
+/* Job Card Description */
+.job-card p, .job-card ul {
+    font-size: 1rem;
+    color: #555;
+    text-align: left;
+}
+
+/* Scrollbar Customization */
+.right-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.right-panel::-webkit-scrollbar-thumb {
+    background-color:rgb(25, 25, 196);
+    border-radius: 10px;
+}
+
+/* Highlight Effect for Selected Job */
+.job-card.highlight {
+    border: 2px solid rgb(25, 25, 196);
+    box-shadow: 0 0 15px  rgb(11, 11, 132);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    50% { transform: scale(1.02); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .job-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .job-container {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+}

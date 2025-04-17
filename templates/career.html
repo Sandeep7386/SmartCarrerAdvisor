@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guide</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">CareerGuide</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('job_list') }}">Jobs</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="#footer" class="text-gray-600 hover:text-green-600">Contact Us</a></li>
+            </ul>
+        </nav>
+        <form action="{{ url_for('input_page') }}" method="get">
+            <button type="submit" class="find-career">Find Your Career</button>
+        </form>        
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the Ideal Career Tailored Just for You</h1>
+            <p>Unlock Your True Potential with Personalized Career Guidance. Explore paths crafted to match your unique skills and aspirations.</p>
+            <div class="buttons">
+                <form action="{{ url_for('job_description') }}" method="get" style="display:inline;">
+                    <button type="submit" class="job-description">Job Description</button>
+                </form>
+                <form action="{{ url_for('input_page') }}" method="get" style="display:inline;">
+                    <button type="submit" class="find-talent">Find Your Talent</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" >
+        <div class="project-details">
+            <h3>Project Details</h3>
+            <p>Team Members:</p>
+            <ul>
+                <li>B. Lal Pramodh     - 22331A4207</li>
+                <li>B. Sandeep         - 22331A4205</li>
+                <li>T. Venkata Surya   - 22331A4258</li>
+                <li>P. Rishandra Varma - 22331A4247</li>
+            </ul>
+            <p>Contact Team : <a href="mailto:lalpramodhbonela@gmail.com">lalpramodhbonela@gmail.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

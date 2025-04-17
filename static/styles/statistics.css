@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color:#3a5c84;
+  color: #333;
+}
+
+.section {
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 800px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.section:hover {
+  transform: scale(1.02);
+}
+
+h2, h1 {
+  color:#3a5c84;
+  text-align: center;
+}
+
+h2:hover {
+  color: #1b314f;
+  transition: color 0.3s ease-in-out;
+}
+
+canvas {
+  display: block;
+  margin: 20px auto;
+  width: 100% !important;
+  max-width: 900px;
+  height: 400px !important;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #e3f2fd;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+li:hover {
+  background: #c8e1fa;
+}
+
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  text-align: center;
+}
+
+.company-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.company-card:hover {
+  transform: translateY(-5px);
+}
+
+.company-card h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.company-card a {
+  text-decoration: none;
+  color: #0366d6;
+  font-weight: bold;
+}
+
+.btn-back {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background:#2f5072;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-back:hover {
+  background: #304c64;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/prediction.css') }}">
+</head>
+<body class="bg-blue-100">
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-green-600">CareerGuide</div>
+            <nav class="space-x-4">
+                <a href="{{ url_for('home') }}" class="text-gray-600 hover:text-green-600">Home</a>
+                <a href="{{ url_for('about') }}" class="text-gray-600 hover:text-green-600">About</a>
+                <a href="{{ url_for('job_list') }}" class="text-gray-600 hover:text-green-600">Jobs</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-bold text-blue-600 mb-4">Predicted Job Roles</h2>
+            <p class="text-gray-700">Your top recommended careers are:</p>
+            <ul class="job-list list-disc list-inside mt-4">
+                {% if predicted_jobs|length >= 3 %}
+                    <li><strong><a href="https://www.linkedin.com/jobs/search/?keywords={{ predicted_jobs[0] }}" target="_blank">{{ predicted_jobs[0] }}</a></strong></li>
+                    <li><strong><a href="https://www.linkedin.com/jobs/search/?keywords={{ predicted_jobs[1] }}" target="_blank">{{ predicted_jobs[1] }}</a></strong></li>
+                    <li><strong><a href="https://www.linkedin.com/jobs/search/?keywords={{ predicted_jobs[2] }}" target="_blank">{{ predicted_jobs[2] }}</a></strong></li>
+                {% else %}
+                    <li><strong>Insufficient prediction data</strong></li>
+                {% endif %}
+            </ul>
+            <div class="mt-4 btn-control">
+                <a href="{{ url_for('input_page') }}" class="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Go Back</a> 
+                <a href="{{ url_for('statistics') }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">View Statistics</a> 
+            </div>
+        </div>
+    </main>
+</body>
+</html>

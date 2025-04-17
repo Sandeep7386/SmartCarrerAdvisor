@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Recommendation Statistics</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/statistics.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="section">
+    <h2>Career Prediction Chart</h2>
+    <canvas id="careerChart"></canvas>
+  </div>
+
+  <div class="section">
+    <h2>Career Roadmap</h2>
+    <ul id="roadmapList">
+      <!-- Filled dynamically -->
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Skill Gap Analysis</h2>
+    <p><strong>Skills you need to improve for your top career:</strong></p>
+    <ul id="missingSkillsList"></ul>
+  </div>
+
+  <div class="section">
+    <h2>Top Companies Hiring for Your Top Career</h2>
+    <div class="companies-grid" id="companiesGrid"></div>
+  </div>
+
+  <a href="{{ url_for('input_page') }}" class="btn-back">← Back to Prediction</a>
+
+  <script>
+    const predictions = [
+      { career: 'Software Developer', confidence: 92 },
+      { career: 'Database Developer', confidence: 85 },
+      { career: 'UX Designer', confidence: 80 },
+      { career: 'Data Architect', confidence: 75 },
+      { career: 'Network Engineer', confidence: 70 }
+    ];
+
+    const jobRoleSkills = {
+      "Software Developer": ["Python", "Java", "Problem Solving", "Git", "Web Development"],
+      "Database Developer": ["SQL", "Database Design", "Stored Procedures", "Optimization", "Data Modeling"],
+      "UX Designer": ["UI Design", "Figma", "Prototyping", "User Research", "Creativity"],
+      "Data Architect": ["SQL", "Database Design", "Cloud Databases", "Data Modeling"],
+      "Network Engineer": ["Networking Protocols", "Router Configuration", "Security", "Firewall Management"]
+    };
+
+    const companiesByRole = {
+      "Software Developer": [
+        { name: 'Google', link: 'https://careers.google.com' },
+        { name: 'Microsoft', link: 'https://careers.microsoft.com' },
+        { name: 'Amazon', link: 'https://www.amazon.jobs' }
+      ],
+      "Database Developer": [
+        { name: 'Oracle', link: 'https://www.oracle.com/careers' },
+        { name: 'Microsoft', link: 'https://careers.microsoft.com' },
+        { name: 'IBM', link: 'https://www.ibm.com/careers' }
+      ],
+      "UX Designer": [
+        { name: 'Adobe', link: 'https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced' },
+        { name: 'Google', link: 'https://careers.google.com' },
+        { name: 'Figma', link: 'https://www.figma.com/careers/' }
+      ],
+      "Data Architect": [
+        { name: 'Snowflake', link: 'https://careers.snowflake.com/' },
+        { name: 'AWS', link: 'https://aws.amazon.com/careers/' },
+        { name: 'Google Cloud', link: 'https://careers.google.com' }
+      ],
+      "Network Engineer": [
+        { name: 'Cisco', link: 'https://www.cisco.com/c/en/us/about/careers.html' },
+        { name: 'Juniper Networks', link: 'https://careers.juniper.net/' },
+        { name: 'Tata Communications', link: 'https://www.tatacommunications.com/careers/' }
+      ]
+    };
+
+    const userSkills = ["Python", "Problem Solving", "HTML", "CSS", "Git"];
+
+    // Chart Setup
+    const ctx = document.getElementById('careerChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: predictions.map(p => p.career),
+        datasets: [{
+          label: 'Confidence (%)',
+          data: predictions.map(p => p.confidence),
+          backgroundColor: ['#4bc0c0', '#36a2eb', '#9966ff', '#ff9f40', '#ff6384'],
+          borderRadius: 10
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, ticks: { stepSize: 10 } } }
+      }
+    });
+
+    // Roadmap Setup
+    const topCareer = predictions[0].career;
+    const roadmapSteps = {
+      "Software Developer": [
+        "Learn core programming languages (Python, Java)",
+        "Build personal projects",
+        "Contribute to open source",
+        "Learn Git and version control",
+        "Prepare for coding interviews"
+      ],
+      "Database Developer": [
+        "Master SQL queries",
+        "Understand database design principles",
+        "Practice optimization techniques",
+        "Learn procedures and triggers",
+        "Work with large datasets"
+      ],
+      "UX Designer": [
+        "Learn design tools (Figma, Adobe XD)",
+        "Study color theory and typography",
+        "Work on UI mockups",
+        "Conduct user research",
+        "Build a design portfolio"
+      ],
+      "Data Architect": [
+        "Learn advanced database modeling",
+        "Work on scalability and security",
+        "Get familiar with cloud platforms",
+        "Design enterprise-level solutions",
+        "Gain certifications in cloud databases"
+      ],
+      "Network Engineer": [
+        "Study network protocols",
+        "Learn routing and switching",
+        "Setup firewalls and security layers",
+        "Hands-on with Cisco devices",
+        "Prepare for CCNA/CCNP"
+      ]
+    };
+
+    const roadmapList = document.getElementById('roadmapList');
+    roadmapSteps[topCareer].forEach(step => {
+      const li = document.createElement('li');
+      li.textContent = step;
+      roadmapList.appendChild(li);
+    });
+
+    // Skill Gap
+    const missingSkillsList = document.getElementById('missingSkillsList');
+    const missingSkills = jobRoleSkills[topCareer].filter(skill => !userSkills.includes(skill));
+    missingSkills.forEach(skill => {
+      const li = document.createElement('li');
+      li.textContent = skill;
+      missingSkillsList.appendChild(li);
+    });
+
+    // Top Companies Hiring
+    const companiesGrid = document.getElementById('companiesGrid');
+    companiesByRole[topCareer].forEach(company => {
+      const card = document.createElement('div');
+      card.className = 'company-card';
+      card.innerHTML = `<h3>${company.name}</h3><a href="${company.link}" target="_blank">View Jobs</a>`;
+      companiesGrid.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
