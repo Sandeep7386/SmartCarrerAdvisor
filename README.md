@@ -15,6 +15,7 @@ CareerGuide is a **machine learning-based recommendation system** designed to he
 - JavaScript
 - Flask (Python Framework)
 - Pickle (for model storage and loading)
+- Sql (for Backend)
 
 ## 📽️ Demo
 Check out the https://drive.google.com/file/d/1BmoTe-Nn_AlTwIIGu-XZyFp_ZGob6y9O/view?usp=drive_link 
@@ -25,3 +26,4 @@ Check out the https://drive.google.com/file/d/1BmoTe-Nn_AlTwIIGu-XZyFp_ZGob6y9O/
    ```bash
    git clone https://github.com/Lalpramodh/SmartCareerAdvisor
    cd SmartCareerAdvisor
+   
